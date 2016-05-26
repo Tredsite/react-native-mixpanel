@@ -1,4 +1,4 @@
-# react-native-mixpanel
+# React-Native-Mixpanel
 Super simple React Native wrapper for Mixpanel tracking
 
 ##Installation##
@@ -25,10 +25,10 @@ Mixpanel.track("Event name");
 Mixpanel.trackWithProperties('Click Button', {button_type: 'yellow button', button_text: 'magic button'});
 
 // Create Alias from unique id
-Mixpanel.createAlias(UNIQUE_ID)
+Mixpanel.createAlias(UNIQUE_ID);
 
 // Identify 
-Mixpanel.identify(UNIQUE_ID)
+Mixpanel.identify(UNIQUE_ID);
 
 // Get Distinct ID
 Mixpanel.getDistinctId(function(id){
@@ -65,4 +65,4 @@ Mixpanel.reset();
 ```
 
 ##Notes##
-For more info please have a look at the [official Mixpanel reference](https://mixpanel.com/help/reference/ios) for iOS
+For more info please have a look at the [official Mixpanel reference](https://mixpanel.com/help/reference/ios) for iOS.
