@@ -93,7 +93,7 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
      * @param savedInstanceState
      */
     @ReactMethod
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate() {
         MixpanelAPI.People people = mixpanel.getPeople();
         people.identify("testemail@gmail.com");
         people.initPushHandling("971542200948");
