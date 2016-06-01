@@ -94,10 +94,11 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void onCreate() {
-        people = mixpanel.getPeople();
-        people.identify("testemail@gmail.com");
-        people.initPushHandling("971542200948");
-    }
+    mMixpanel = MixpanelAPI.getInstance(this, "006d2db0f4408244bf79faf76a60b4a0");
+    MixpanelAPI.People people = mMixpanel.getPeople();
+    people.identify("TESTID");
+    people.initPushHandling("971542200948");
+}
 
     /**
      * Alias the user's distinct id w/ their new user email.
