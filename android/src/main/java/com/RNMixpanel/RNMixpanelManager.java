@@ -88,17 +88,19 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     /**
-     * Alias an old Mixpanel distinct id w/ a new email.
+     * Handle the saving of the Android user push notification token.
      *
-     * @param old_id
+     * @param savedInstanceState
      */
     @ReactMethod
-    public void getDistinctId(String old_id) {
-      mixpanel.People.getDistinctId();
+    public void onCreate(Bundle savedInstanceState) {
+        MixpanelAPI.People people = mixpanel.getPeople();
+        people.identify("testemail@gmail.com");
+        people.initPushHandling("id-goes-here");
     }
 
     /**
-     * Returns the user's distinct id.
+     * Alias the user's distinct id w/ their new user email.
      *
      * @param old_id
      */
