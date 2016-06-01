@@ -88,6 +88,26 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     /**
+     * Alias an old Mixpanel distinct id w/ a new email.
+     *
+     * @param old_id
+     */
+    @ReactMethod
+    public void getDistinctId(String old_id) {
+      mixpanel.People.getDistinctId();
+    }
+
+    /**
+     * Returns the user's distinct id.
+     *
+     * @param old_id
+     */
+    @ReactMethod
+    public void alias(String old_id) {
+      mixpanel.alias(old_id, null);
+    }
+
+    /**
      * Starts timing a Mixpanel event. PPTMixpanelManager.track() must be called once the event
      * you're timing is complete.
      *
@@ -224,7 +244,7 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     /**
-     * Converts a readable map of numbers into a natve map of numbers.
+     * Converts a readable map of numbers into a native map of numbers.
      *
      * @param readableMap
      * @return

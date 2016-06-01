@@ -1,7 +1,7 @@
 # React-Native-Mixpanel
 Super simple React Native wrapper for Mixpanel tracking
 
-##Installation##
+## Installation
 1. `npm install react-native-mixpanel --save`
 2. Install Mixpanel iOS SDK via either Cocoapods or manually [more info here](https://mixpanel.com/help/reference/ios)
 2. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
@@ -64,5 +64,9 @@ Mixpanel.reset();
 
 ```
 
-##Notes##
+## Testing Locally
+Run `npm pack`: This will generate a tarball release of your npm module named after your project. You can then use this in your other repositories to test.
+
+
+## Notes
 For more info please have a look at the [official Mixpanel reference](https://mixpanel.com/help/reference/ios) for iOS.

@@ -22,13 +22,13 @@ RCT_EXPORT_METHOD(sharedInstanceWithToken:(NSString *)apiToken) {
     mixpanel = [Mixpanel sharedInstance];
 }
 
-// Track
+// Track a Mixpanel Event
 RCT_EXPORT_METHOD(track:(NSString *)event) {
     [mixpanel track:event];
     [mixpanel flush];
 }
 
-// Track w/ Properties
+// Track a Mixpanel Event w/ Properties
 RCT_EXPORT_METHOD(trackWithProperties:(NSString *)event properties:(NSDictionary *)properties) {
     [mixpanel track:event properties:properties];
     [mixpanel flush];
