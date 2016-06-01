@@ -88,18 +88,6 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     /**
-     * Handle the saving of the Android user push notification token.
-     *
-     * @param savedInstanceState
-     */
-    @ReactMethod
-    public void onCreate() {
-    MixpanelAPI.People people = mixpanel.getPeople();
-    people.identify("TESTID");
-    people.initPushHandling("971542200948");
-}
-
-    /**
      * Alias the user's distinct id w/ their new user email.
      *
      * @param old_id
