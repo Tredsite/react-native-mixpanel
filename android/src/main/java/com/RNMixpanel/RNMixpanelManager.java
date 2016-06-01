@@ -94,8 +94,7 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void onCreate() {
-    mMixpanel = MixpanelAPI.getInstance(this, "006d2db0f4408244bf79faf76a60b4a0");
-    MixpanelAPI.People people = mMixpanel.getPeople();
+    MixpanelAPI.People people = mixpanel.getPeople();
     people.identify("TESTID");
     people.initPushHandling("971542200948");
 }
