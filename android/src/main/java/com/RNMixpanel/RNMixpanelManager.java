@@ -144,6 +144,11 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
         mixpanel.getPeople().set(this.readableMapToJson(properties));
     }
 
+    @ReactMethod
+    public void set(ReadableMap properties) {
+        mixpanel.getPeople().set(this.readableMapToJson(properties));
+    }
+
     /**
      * Increments properties for the identified user.
      *
