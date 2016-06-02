@@ -1,7 +1,7 @@
-# react-native-mixpanel
+# React-Native-Mixpanel
 Super simple React Native wrapper for Mixpanel tracking
 
-##Installation##
+## Installation
 1. `npm install react-native-mixpanel --save`
 2. Install Mixpanel iOS SDK via either Cocoapods or manually [more info here](https://mixpanel.com/help/reference/ios)
 2. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
@@ -11,27 +11,32 @@ Super simple React Native wrapper for Mixpanel tracking
 6. Run your project (`Cmd+R`)
 
 ##Usage##
-```
-//Require the module
+```js
+// Require the module
 var Mixpanel = require('react-native-mixpanel');
 
-//Init Mixpanel SDK with your project token
+// Init Mixpanel SDK with your project token
 Mixpanel.sharedInstanceWithToken(YOUR_PROJECT_TOKEN);
 
-//Send and event name with no properties
+// Send and event name with no properties
 Mixpanel.track("Event name");
 
-//Track event with properties
+// Track event with properties
 Mixpanel.trackWithProperties('Click Button', {button_type: 'yellow button', button_text: 'magic button'});
 
-//Create Alias from unique id
-Mixpanel.createAlias(UNIQUE_ID)
+// Create Alias from unique id
+Mixpanel.createAlias(UNIQUE_ID);
 
-//Identify
-Mixpanel.identify(UNIQUE_ID)
+// Identify 
+Mixpanel.identify(UNIQUE_ID);
 
-//Set People properties
-Mixpanel.set("$email", "elvis@email.com");
+// Get Distinct ID
+Mixpanel.getDistinctId(function(id){
+	console.log(id);
+})
+
+// Set People properties
+Mixpanel.set({"$email": "elvis@email.com"});
 
 // Timing Events
 // Sets the start time for an action, for example uploading an image
@@ -45,13 +50,13 @@ Mixpanel.registerSuperProperties({"Account type": "Free", "User Type": "Vendor"}
 // Register super properties Once
 Mixpanel.registerSuperProperties({"Gender": "Female"});
 
-// track Revenue
+// Track Revenue
 Mixpanel.trackCharge(399);
 
-// track with properties
+// Track with properties
 Mixpanel.trackCharge(399, {"product": "ACME Wearable tech"});
 
-// increment property
+// Increment property
 Mixpanel.increment("Login Count", 1);
 
 // Mixpanel reset method
@@ -59,5 +64,9 @@ Mixpanel.reset();
 
 ```
 
-##Notes##
-For more info please have a look at the [official Mixpanel reference](https://mixpanel.com/help/reference/ios) for iOS
+## Testing Locally
+Run `npm pack`: This will generate a tarball release of your npm module named after your project. You can then use this in your other repositories to test.
+
+
+## Notes
+For more info please have a look at the [official Mixpanel reference](https://mixpanel.com/help/reference/ios) for iOS.
