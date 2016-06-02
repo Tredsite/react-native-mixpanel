@@ -128,6 +128,11 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
         mixpanel.identify(id);
     }
 
+    @ReactMethod
+    public String getDistinctId() {
+        return mixpanel.getDistinctId();
+    }
+
     /**
      * Sets properties for the identified user.
      *
