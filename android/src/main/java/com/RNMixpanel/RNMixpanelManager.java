@@ -129,7 +129,7 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public String getAndroidDistinctId() {
+    public String getDistinctId() {
         return mixpanel.getDistinctId();
     }
 
