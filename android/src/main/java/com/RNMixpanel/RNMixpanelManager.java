@@ -8,6 +8,7 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.bridge.Callback;
 
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
@@ -129,8 +130,8 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void getDistinctId(Callback callback) {
-        callback.invoke(mixpanel.getDistinctId());
+    public void getDistinctId(Callback successCallback) {
+        successCallback.invoke(mixpanel.getDistinctId());
     }
 
     /**
