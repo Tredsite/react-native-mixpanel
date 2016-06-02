@@ -127,6 +127,7 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     @ReactMethod
     public void identify(String id) {
         mixpanel.identify(id);
+        mixpanel.getPeople().identify(id);
     }
 
     @ReactMethod
