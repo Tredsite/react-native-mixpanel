@@ -132,7 +132,7 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void alias(String email, String distinctId) {
-        mixpanel.alias(email, null);
+        mixpanel.alias(email, distinctId);
     }
 
     @ReactMethod
