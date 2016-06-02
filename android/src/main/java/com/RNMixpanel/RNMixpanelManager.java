@@ -88,16 +88,6 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     /**
-     * Alias the user's distinct id w/ their new user email.
-     *
-     * @param old_id
-     */
-    @ReactMethod
-    public void alias(String old_id) {
-      mixpanel.alias(old_id, null);
-    }
-
-    /**
      * Starts timing a Mixpanel event. PPTMixpanelManager.track() must be called once the event
      * you're timing is complete.
      *
