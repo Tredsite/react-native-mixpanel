@@ -131,6 +131,11 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void alias(String email, String distinctId) {
+        mixpanel.alias(email, distinctId);
+    }
+
+    @ReactMethod
     public void initPushHandling(String projectNum) {
         mixpanel.getPeople().initPushHandling(projectNum);
     }

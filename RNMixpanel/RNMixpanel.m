@@ -35,8 +35,8 @@ RCT_EXPORT_METHOD(trackWithProperties:(NSString *)event properties:(NSDictionary
 }
 
 // Alias
-RCT_EXPORT_METHOD(createAlias:(NSString *)old_id) {
-    [mixpanel createAlias:old_id forDistinctID:mixpanel.distinctId];
+RCT_EXPORT_METHOD(createAlias:(NSString *)email) {
+    [mixpanel createAlias:email forDistinctID:mixpanel.distinctId];
 }
 
 // Identify
