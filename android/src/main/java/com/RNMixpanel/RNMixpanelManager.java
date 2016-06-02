@@ -130,6 +130,11 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void initPushHandling(String projectNum) {
+        mixpanel.getPeople().initPushHandling(projectNum);
+    }
+
+    @ReactMethod
     public void getDistinctId(Callback successCallback) {
         successCallback.invoke(mixpanel.getDistinctId());
     }
