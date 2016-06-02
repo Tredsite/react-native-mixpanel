@@ -130,16 +130,28 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
         mixpanel.getPeople().identify(id);
     }
 
+    /**
+     * Alias old anonymous Id w/ new user email.
+     * @param newId
+     */
     @ReactMethod
     public void alias(String newId) {
         mixpanel.alias(newId, mixpanel.getDistinctId());
     }
 
+    /**
+     * Ability to send push notifications on Android devices.
+     * @param projectNum
+     */
     @ReactMethod
     public void initPushHandling(String projectNum) {
         mixpanel.getPeople().initPushHandling(projectNum);
     }
 
+    /**
+     * Returns user's Distinct ID that is automatically assigned by Mixpanel.
+     * @param successCallback
+     */
     @ReactMethod
     public void getDistinctId(Callback successCallback) {
         successCallback.invoke(mixpanel.getDistinctId());
