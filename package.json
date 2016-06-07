@@ -1,7 +1,7 @@
 {
   "name": "react-native-mixpanel",
-  "version": "0.0.5",
-  "description": "A React Native wrapper for Mixpanel tracking",
+  "version": "0.0.6",
+  "description": "Mixpanel React Native Wrapper",
   "main": "index.js",
   "repository": {
     "type": "git",

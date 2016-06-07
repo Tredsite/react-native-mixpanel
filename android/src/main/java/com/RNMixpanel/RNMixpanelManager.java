@@ -8,6 +8,7 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.bridge.Callback;
 
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
@@ -126,6 +127,34 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     @ReactMethod
     public void identify(String id) {
         mixpanel.identify(id);
+        mixpanel.getPeople().identify(id);
+    }
+
+    /**
+     * Alias old anonymous Id w/ new user email.
+     * @param newId
+     */
+    @ReactMethod
+    public void alias(String newId) {
+        mixpanel.alias(newId, mixpanel.getDistinctId());
+    }
+
+    /**
+     * Ability to send push notifications on Android devices.
+     * @param projectNum
+     */
+    @ReactMethod
+    public void initPushHandling(String projectNum) {
+        mixpanel.getPeople().initPushHandling(projectNum);
+    }
+
+    /**
+     * Returns user's Distinct ID that is automatically assigned by Mixpanel.
+     * @param successCallback
+     */
+    @ReactMethod
+    public void getDistinctId(Callback successCallback) {
+        successCallback.invoke(mixpanel.getDistinctId());
     }
 
     /**
@@ -135,6 +164,11 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void peopleSet(ReadableMap properties) {
+        mixpanel.getPeople().set(this.readableMapToJson(properties));
+    }
+
+    @ReactMethod
+    public void set(ReadableMap properties) {
         mixpanel.getPeople().set(this.readableMapToJson(properties));
     }
 
@@ -224,7 +258,7 @@ public class RNMixpanelManager extends ReactContextBaseJavaModule {
     }
 
     /**
-     * Converts a readable map of numbers into a natve map of numbers.
+     * Converts a readable map of numbers into a native map of numbers.
      *
      * @param readableMap
      * @return
